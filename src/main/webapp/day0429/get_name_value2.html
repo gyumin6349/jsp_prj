@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js0417/get_name_value2.html</title>
+<!-- site 기본 CSS -->
+<link rel="stylesheet" type="text/css" href="http://192.168.10.88/html_prj/common/css/main_v250409.css">
+<!-- bootstrap CDN ( https://getbootstrap.com/docs/5.3/getting-started/introduction/ ) -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+<style type="text/css">
+#output{border:1px solid #333; width: 600px; height: 300px;}
+</style>
+<script type="text/javascript">
+	function getArrayValue(){
+		//alert("getArrayValue()");
+		
+		//1. form객체 얻기
+		var obj=document.frm;
+		//2. 값을 얻기위한,,, FormControl 얻기
+		var radioArr=obj.gender;//object RadioNodeList(이름이 같아 배열로 처리된다)
+		//배열이니까,,, 일괄처리 다루려면,,, 무지성for -> radio의 갯수만큼 반복
+		for(var i =0; i<radioArr.length; i++){
+			//alert( radioArr[i].checked+" / "+radioArr[i].value );
+			//다 찍을것 아니니까 if로~
+			if(radioArr[i].checked){ //선택되었으면
+				gender=radioArr[i].value;
+			}//end if
+		}//end for
+		
+		var output=`
+		<ul>
+		<li><strong>선택성별</strong>: ${ gender }</li>
+		</ul>
+		`;
+		
+		document.getElementById("output").innerHTML=output;
+		
+	}//getArrayValue
+</script>
+</head>
+<body>
+<h2>name속성의값이 중복되는 FormControl처리</h2>
+<form name="frm">
+<ul>
+	<li>
+		<label>radio</label>
+		<input type="radio" name="gender" value="M"/>남자
+		<input type="radio" name="gender" value="F"/>여자
+	</li>
+	<li>
+		<input type="button" value="값 얻기" class="btn btn-success" onclick="getArrayValue()"/>
+		<input type="reset" value="초기화" class="btn btn-danger"/>
+	</li>
+</ul>
+</form>
+<div id="output"></div>
+</body>
+</html>

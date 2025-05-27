@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>회원가입 양식</title>
+<style type="text/css">
+body {
+	font-family: "맑은 고딕", "굴림체", "sans-serif";
+}
+
+th {
+	font-weight: normal;
+}
+
+.inputBox {
+	border: 1px solid #D4D4D4;
+	height: 30px;
+}
+
+.btnCenter {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<h2>회원가입 양식</h2>
+<form>
+<table>
+<tr>
+<th>아이디</th>
+<td>
+	<input type="text" readonly class="txtId">
+	<input type="button" value="ID중복확인">
+</td>
+</tr>
+<tr>
+<th>비밀번호</th>
+<td>
+	<input type="password" class="pass1">
+	비밀번호 확인
+	<input type="password" class="pass2">
+</td>
+</tr>
+<tr>
+<th>이름</th>
+<td>
+	<input type="text" class="name">
+</td>
+</tr>
+<tr>
+<th>생일</th>
+<td>
+	<input type="text">
+</td>
+</tr>
+<tr>
+<th>연락처</th>
+<td>
+	<input type="text">
+</td>
+</tr>
+<tr>
+<th>휴대폰</th>
+<td>
+	<input type="text" class="phoneNum">
+	<input type="checkbox">수신
+</td>
+</tr>
+<tr>
+<th>이메일</th>
+<td>
+	<input type="text" class="email">
+	@
+	<input type="text" list="langData">
+	<datalist id="langData">
+		<option value="daum.net">
+		<option value="gmail.com">
+		<option value="hotmail.com">
+		<option value="nate.com">
+		<option value="korea.com">
+	</datalist>
+	<input type="checkbox">수신
+</td>
+</tr>
+<tr>
+<th>성별</th>
+<td>
+	<input type="radio" name="gender" class="gender" checked>남자
+	<input type="radio" name="gender" class="gender">여자
+</td>
+</tr>
+<tr>
+<th>소재지</th>
+<td>
+	<select>
+		<option>선택해주세요</option>
+		<option>강원</option>
+		<option>경기</option>
+		<option>경남</option>
+		<option>경북</option>
+		<option>광주</option>
+	</select>
+</td>
+</tr>
+<tr>
+<th>우편번호</th>
+<td>
+	<input type="text" readonly class="zipCode">
+	<input type="button" value="우편번호검색">
+</td>
+</tr>
+<tr>
+<th>주소</th>
+<td>
+	<input type="text" class="addr">
+	<br>
+	<input type="text">
+</td>
+</tr>
+<tr>
+<th>자기소개</th>
+<td>
+	<textarea style="width: 400px; height: 100px;"></textarea>
+	<br>
+	<div style="text-align: right; padding-right: 20px;">
+	<span>0</span>/500
+	</div>
+</td>
+</tr>
+<tr>
+<td class="btnCenter" colspan="2">
+	<input type="button" value="확인">
+	<input type="button" value="취소">
+</td>
+</tr>
+</table>
+</form>
+
+<script>
+const txtId = document.querySelector('.txtId');
+const pass1 = document.querySelector('.pass1');
+const pass2 = document.querySelector('.pass2');
+const name = document.querySelector('.name');
+const phoneNum = document.querySelector('.phoneNum');
+const email = document.querySelector('.email');
+const zipCode = document.querySelector('.zipCode');
+const addr = document.querySelector('.addr');
+
+
+
+
+
+</script>
+</body>
+</html>
